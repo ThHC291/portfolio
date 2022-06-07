@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { MdLightMode, MdOutlineLightMode } from 'react-icons/md';
 
 const themes = [
   { name: 'Light' },
@@ -8,28 +9,29 @@ const themes = [
 
 const ThemeSwitch: React.FC = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
   return (
-    <div>
-      <select
-        name="theme"
-        id="theme-select"
-        // className="px-3 py-1 text-gray-800 bg-white border border-gray-800 rounded-full"
-        onChange={(e) => setTheme(e.currentTarget.value)}
-        value={theme}
+    <section className="flex items-center">
+
+      <button
+        aria-label="Toggle Dark Mode"
+        type="button"
+        className="p-1 rounded"
+        onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
       >
-        {themes.map((t) => (
-          <option key={t.name.toLowerCase()} value={t.name.toLowerCase()}>
-            {t.name}
-          </option>
-        ))}
-      </select>
-    </div>
+        {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
+            <MdOutlineLightMode size={40} />
+          ) : (
+            <MdLightMode size={40}/>
+          )}
+      </button>
+
+    </section>
   );
 };
 
