@@ -1,11 +1,9 @@
 const Logo: React.FC = () => {
   return (
-    <>
-      <div className="flex">
-        <section className="bg-black rounded-full">Logo</section>
-        <section className="text-xl font-bold">Thiago Chinen</section>
-      </div>
-    </>
+    <section className="flex">
+      <img className="w-12 h-12 rounded-full mx-2" src="/photo.jfif" alt="avatar"></img>
+      <section className="flex text-xl font-semibold items-center">Thiago Chinen</section>
+    </section>
   )
 }
 
