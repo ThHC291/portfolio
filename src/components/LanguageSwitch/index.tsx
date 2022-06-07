@@ -13,9 +13,9 @@ const LanguageSwitch = () => {
         <select className="text-semibold text-xl p-1 rounded bg-transparent	transition focus:outline-none"
           onChange={(event) => router.push({ pathname, query }, asPath, { locale: event.target.value })}
         >
-          {otherLocales.map((localeOption) => {
+          {otherLocales.map((localeOption, key) => {
             return (
-              <option className="dark:bg-bg-color" value={localeOption}>{localeOption.toUpperCase()}</option>
+              <option key={key} className="dark:bg-bg-color" value={localeOption}>{localeOption.toUpperCase()}</option>
             );
           })}
         </select>
