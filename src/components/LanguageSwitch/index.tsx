@@ -9,8 +9,8 @@ const LanguageSwitch = () => {
   return (
     <>
       <section className="flex items-center">
-        <MdLanguage size={40} />
-        <select className="text-semibold text-xl p-1 rounded bg-transparent	transition focus:outline-none"
+        <MdLanguage size={30} />
+        <select className="text-semibold text-lg p-1 rounded bg-transparent	transition focus:outline-none"
           onChange={(event) => router.push({ pathname, query }, asPath, { locale: event.target.value })}
         >
           {otherLocales.map((localeOption, key) => {
