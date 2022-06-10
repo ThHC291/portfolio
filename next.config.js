@@ -3,6 +3,7 @@ module.exports = {
   darkMode: 'class',
   reactStrictMode: true,
   i18n: {
+    localeDetection: false,
     locales: ["en", "pt"],
     defaultLocale: "en",
     // domains: [
