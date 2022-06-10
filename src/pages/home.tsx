@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { useTranslations } from 'next-intl';
 
 const Home: NextPage = () => {
-  const t = useTranslations('NavBar');
+  const t = useTranslations('Home');
 
   return (
     <>
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
 
         <div className="flex flex-grow flex-col md:w-2/5 justify-center items-start text-center md:text-left lg:w-1/2 xl:w-1/2">
           <div className="w-full font-semibold text-xl lg:text-4xl xl:text-4xl">
-            Hello, i'm
+            { t('helloMessage') }
           </div>
           <div className="w-full my-3 text-4xl font-bold text-primary lg:text-8xl xl:text-8xl">
             Thiago Chinen

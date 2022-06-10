@@ -4,5 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "blog": "Blog"
+  },
+  "Home" : {
+    "helloMessage": "Hello, i'm"
   }
 }

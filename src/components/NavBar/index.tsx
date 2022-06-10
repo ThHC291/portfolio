@@ -1,13 +1,24 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { useState } from 'react';
 import LanguageSwitch from '../LanguageSwitch';
 import Links from '../Links';
 import Logo from '../Logo';
 import ThemeSwitch from '../ThemeSwitch';
 
-const NavLink = ({ to, children }: any) => {
+interface NavLinkParams { 
+	to: string;
+	children: React.ReactNode;
+}
+
+interface MobileNavProps { 
+	open: boolean;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavLink: React.FC<NavLinkParams> = ({ to, children }) => {
 	const { locale, pathname } = useRouter();
 
 	return (
@@ -19,12 +30,12 @@ const NavLink = ({ to, children }: any) => {
 	);
 };
 
-const MobileNav = ({ open, setOpen }: any) => {
+const MobileNav: React.FC<MobileNavProps> = ({ open, setOpen }) => {
 	const t = useTranslations('NavBar');
 	const { locale, pathname } = useRouter();
 
 	return (
-		<section className={`absolute top-0 left-0 h-screen w-screen bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+		<section className={`absolute top-0 left-0 h-screen min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
 			<section className="flex items-center justify-center h-20 bg-main-color filter drop-shadow-md">
 				<Logo />
 			</section>
@@ -36,7 +47,6 @@ const MobileNav = ({ open, setOpen }: any) => {
 			</section>
 
 			<section className="flex flex-col ml-4 text-xl font-bold">
-
 
 				<Link href="/home" locale={locale}>
 					<a
@@ -92,7 +102,7 @@ const MobileNav = ({ open, setOpen }: any) => {
 };
 
 const NavBar: React.FC = () => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState<boolean>(false);
 
 	const t = useTranslations('NavBar');
 

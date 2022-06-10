@@ -1,8 +1,11 @@
 {
   "NavBar": {
     "home": "Home",
-    "about": "About",
-    "projects": "Projects",
+    "about": "Sobre",
+    "projects": "Projetos",
     "blog": "Blog"
+  },
+  "Home" : {
+    "helloMessage": "Olá, eu sou"
   }
 }
