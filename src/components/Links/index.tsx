@@ -7,19 +7,19 @@ const Links: React.FC = () => {
       <section className="flex items-center">
         <section className="px-1">
           <Link href="https://github.com/ThHC291">
-            <a target="_blank"><FaGithub size={30} /></a>
+            <a target="_blank"><FaGithub size={25} /></a>
           </Link>
         </section>
 
         <section className="px-1">
           <Link className="w-full" href="">
-            <a target="_blank"><FaLinkedin size={30} /></a>
+            <a target="_blank"><FaLinkedin size={25} /></a>
           </Link>
         </section>
 
         <section className="px-1">
           <Link href="https://www.instagram.com/thiago_chinen/">
-            <a target="_blank"><FaInstagram size={30} /></a>
+            <a target="_blank"><FaInstagram size={25} /></a>
           </Link>
         </section>
       </section>

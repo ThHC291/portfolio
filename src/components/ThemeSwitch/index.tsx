@@ -25,9 +25,9 @@ const ThemeSwitch: React.FC = () => {
         onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
       >
         {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
-            <MdOutlineLightMode size={30} />
+            <MdOutlineLightMode size={25} />
           ) : (
-            <MdLightMode size={30}/>
+            <MdLightMode size={25}/>
           )}
       </button>
 
