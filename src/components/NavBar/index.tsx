@@ -18,6 +18,10 @@ interface MobileNavProps {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const routes = [
+	'home', 'about', 'projects', 'blog'
+]
+
 const NavLink: React.FC<NavLinkParams> = ({ to, children }) => {
 	const { locale, pathname } = useRouter();
 
@@ -35,7 +39,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, setOpen }) => {
 	const { locale, pathname } = useRouter();
 
 	return (
-		<section className={`absolute top-0 left-0 h-screen min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+		<section className={`absolute top-0 left-0 min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
 			<section className="flex items-center justify-center h-20 bg-main-color filter drop-shadow-md">
 				<Logo />
 			</section>
@@ -47,55 +51,20 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, setOpen }) => {
 			</section>
 
 			<section className="flex flex-col ml-4 text-xl font-bold">
-
-				<Link href="/home" locale={locale}>
-					<a
-						className={`my-4 ${pathname === '/home' ? 'text-primary' : ''}`}
-						onClick={() =>
-							setTimeout(() => {
-								setOpen(!open);
-							}, 100)
-						}
-					>
-						{t('home')}
-					</a>
-				</Link>
-				<Link href="/about" locale={locale}>
-					<a
-						className={`my-4 ${pathname === '/about' ? 'text-primary' : ''}`}
-						onClick={() =>
-							setTimeout(() => {
-								setOpen(!open);
-							}, 100)
-						}
-					>
-						{t('about')}
-					</a>
-				</Link>
-				<Link href="/projects" locale={locale}>
-					<a
-						className={`my-4 ${pathname === '/projects' ? 'text-primary' : ''}`}
-						onClick={() =>
-							setTimeout(() => {
-								setOpen(!open);
-							}, 100)
-						}
-					>
-						{t('projects')}
-					</a>
-				</Link>
-				<Link href="/blog" locale={locale}>
-					<a
-						className={`my-4 ${pathname === '/blog' ? 'text-primary' : ''}`}
-						onClick={() =>
-							setTimeout(() => {
-								setOpen(!open);
-							}, 100)
-						}
-					>
-						{t('blog')}
-					</a>
-				</Link>
+				{routes.map((route, key) => {
+					return <Link key={key} href={`/${route}`} locale={locale}>
+						<a
+							className={`my-4 ${pathname === `/${route}` ? 'text-primary' : ''}`}
+							onClick={() =>
+								setTimeout(() => {
+									setOpen(!open);
+								}, 100)
+							}
+						>
+							{t(route)}
+						</a>
+					</Link>	
+				})}
 			</section>
 		</section>
 	);
@@ -138,13 +107,7 @@ const NavBar: React.FC = () => {
 			</section>
 
 			<section className="hidden md:flex justify-center items-center w-6/12">
-				<NavLink to="/home">{t('home')}</NavLink>
-
-				<NavLink to="/about">{t('about')}</NavLink>
-
-				<NavLink to="/projects">{t('projects')}</NavLink>
-
-				<NavLink to="/blog">{t('blog')}</NavLink>
+				{routes.map((route, key) => <NavLink key={key} to={`/${route}`}>{t(route)}</NavLink>)}
 			</section>
 
 			<section className="hidden flex-wrap md:flex justify-end w-3/12">
