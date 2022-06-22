@@ -52,7 +52,7 @@ const MobileNav: React.FC = () => {
 				</section>
 			</section>
 
-			<section className={`absolute top-0 left-0 h-screen min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+			<section className={`fixed w-full h-full top-0 right-0 left-0 min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
 				<section className="flex items-center justify-center h-20 bg-main-color filter drop-shadow-md">
 					<Logo />
 				</section>

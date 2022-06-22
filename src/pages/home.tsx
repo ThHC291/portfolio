@@ -1,12 +1,13 @@
 import { NextPage } from 'next';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   const t = useTranslations('Home');
 
   return (
     <>
-      <div className="container flex flex-wrap h-screen overflow-y-auto p-4 mx-auto md:pl-24 lg:pl-24 xl:pl-24">
+      <div className="container flex flex-col items-center p-4 md:pl-24 lg:pl-24 xl:pl-24 xl:flex-row gap-x-12 xl:mb-12">
 
         <div className="flex flex-grow flex-col md:w-2/5 justify-center items-start text-center md:text-left lg:w-1/2 xl:w-1/2">
           <div className="w-full font-semibold text-xl lg:text-4xl xl:text-4xl">
@@ -21,10 +22,9 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap bg-main-color py-6">
-          <img src="/photo.jfif" alt="photo"/>
+        <div className="flex items-center justify-center bg-main-color py-6">
+          <Image src="/photo.jfif" layout="intrinsic" width={400} height={300}/>
         </div>
-
       </div>
     </>
   );
