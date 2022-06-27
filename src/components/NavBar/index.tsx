@@ -32,6 +32,13 @@ const MobileNav: React.FC = () => {
 	const { locale, pathname } = useRouter();
 	const t = useTranslations('NavBar');
 
+	const onToggleNav = () => {
+		setOpen((status) => {
+			document.body.style.overflow = status ? 'auto' : 'hidden';
+			return !status
+		})
+	}
+
 	return (
 		<nav>
 			<section className="flex items-center">
@@ -41,8 +48,8 @@ const MobileNav: React.FC = () => {
 
 				<section className="flex m-5 justify-end w-1/2">
 					<section
-						className="relative z-10 flex flex-col items-center justify-between w-8 h-8 md:hidden"
-						onClick={() => { setOpen(!open); }}
+						className="relative z-20 flex flex-col items-center justify-between w-8 h-8 md:hidden"
+						onClick={onToggleNav}
 					>
 						<span className={`h-1 w-full bg-primary rounded-lg transform transition duration-300 ease-in-out ${open ? 'rotate-45 translate-y-3.5' : ''}`} />
 						<span className={`h-1 w-full bg-primary rounded-lg transition-all duration-300 ease-in-out ${open ? 'w-0' : 'w-full'}`} />
@@ -51,8 +58,8 @@ const MobileNav: React.FC = () => {
 
 				</section>
 			</section>
-
-			<section className={`fixed w-full h-full top-0 right-0 left-0 min-w-full bg-main-color transform ${open ? '-translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+			{/* {`fixed w-full h-full top-24 right-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-10 transform ease-in-out duration-300 ${open ? 'translate-x-0' : 'translate-x-full'}`} */}
+			<section className={`fixed w-full h-full top-0 right-0 left-0 bg-main-color z-10 transform ease-in-out duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} `}>
 				<section className="flex items-center justify-center h-20 bg-main-color filter drop-shadow-md">
 					<Logo />
 				</section>
@@ -68,11 +75,7 @@ const MobileNav: React.FC = () => {
 						return <Link key={key} href={`/${route}`} locale={locale}>
 							<a
 								className={`my-4 ${pathname === `/${route}` ? 'text-primary' : ''}`}
-								onClick={() =>
-									setTimeout(() => {
-										setOpen(!open);
-									}, 100)
-								}
+								onClick={onToggleNav}
 							>
 								{t(route)}
 							</a>
