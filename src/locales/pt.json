@@ -5,6 +5,12 @@
     "projects": "Projetos",
     "blog": "Blog"
   },
+  "pages": {
+    "404": {
+      "errorMessage": "Página não encontrada!",
+      "funnyMessage": "Tenha cuidado, pode haver fantasmas aqui."
+    }
+  },
   "Home" : {
     "helloMessage": "Olá, eu sou"
   }
