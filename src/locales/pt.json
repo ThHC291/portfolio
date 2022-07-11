@@ -8,10 +8,12 @@
   "pages": {
     "404": {
       "errorMessage": "Página não encontrada!",
-      "funnyMessage": "Tenha cuidado, pode haver fantasmas aqui."
+      "funnyMessage": "Tenha cuidado, podem haver fantasmas aqui."
     }
   },
   "Home" : {
-    "helloMessage": "Olá, eu sou"
+    "helloMessage": "Olá, eu sou",
+    "desecription": "Desenvolvedor de software, residindo no Brasil.",
+    "slogan": "Sempre bucando aprender algo novo."
   }
 }

@@ -12,6 +12,8 @@
     }
   },
   "Home" : {
-    "helloMessage": "Hello, i'm"
+    "helloMessage": "Hello, i'm",
+    "desecription": "Software developer, living in Brasil.",
+    "slogan": "Always trying learning something new."
   }
 }
