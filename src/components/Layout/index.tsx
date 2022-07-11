@@ -8,11 +8,11 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<>
-			<div className="flex flex-col justify-between h-screen">
+			<section className="flex flex-col justify-between min-h-screen">
 				<NavBar />
 				<section className="mx-auto">{children}</section>
 				<Footer />
-			</div>
+			</section>
 		</>
 	);
 };
