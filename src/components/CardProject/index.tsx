@@ -14,7 +14,7 @@ interface CardProps {
 const CardProject: React.FC<CardProps> = ({ image, title, description, techs, links }: CardProps) => {
     return (
         <>
-            <div className="flex flex-col justify-between rounded bg-secondary overflow-hidden shadow-lg transform  hover:scale-105 transition duration-300">
+            <div className="flex flex-col justify-between rounded bg-light-color dark:bg-secondary overflow-hidden shadow-lg transform hover:scale-105 hover:cursor-pointer transition duration-300">
 
                 <Image className="w-full" layout="responsive" width="100" height="70" src={image} alt="Project photo" />
 
@@ -30,25 +30,28 @@ const CardProject: React.FC<CardProps> = ({ image, title, description, techs, li
                     </div>
                 </div>
 
-                <div className="flex flex- justify-between space-x-4 nowrap text-xs font-semibold bg-main-color p-2 md:text-sm">
-                    <Link href={links.detail}>
-                        <a className="flex justify-center items-center space-x-1 hover:text-primary">
-                            <FaListUl />
-                            <p>View detail</p>
-                        </a>
-                    </Link>
-                    <Link href={links.preview}>
-                        <a className="flex justify-center items-center space-x-1 hover:text-primary">
-                            <FaLink />
-                            <p>Link preview</p>
-                        </a>
-                    </Link>
-                    <Link href={links.detail}>
-                        <a className="flex justify-center items-center space-x-1 hover:text-primary">
-                            <FaGithub />
-                            <p>Repository</p>
-                        </a>
-                    </Link>
+                <div className="flex justify-center space-x-4 nowrap text-xs font-semibold bg-light-color dark:bg-main-color p-2 md:text-sm">
+                    {links.detail ?
+                        <Link href={links.detail}>
+                            <a className="flex justify-center items-center space-x-1 hover:text-primary">
+                                <FaListUl />
+                                <p>View detail</p>
+                            </a>
+                        </Link> : ''}
+                    {links.preview ?
+                        <Link href={links.preview}>
+                            <a className="flex justify-center items-center space-x-1 hover:text-primary">
+                                <FaLink />
+                                <p>Link preview</p>
+                            </a>
+                        </Link> : ''}
+                    {links.repository ?
+                        <Link href={links.repository}>
+                            <a className="flex justify-center items-center space-x-1 hover:text-primary">
+                                <FaGithub />
+                                <p>Repository</p>
+                            </a>
+                        </Link> : ''}
                 </div>
             </div>
         </>

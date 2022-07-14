@@ -11,6 +11,7 @@ module.exports = {
         'secondary': '#334756',
         'main-color': '#2C394B',
         'bg-color': '#082032',
+        'light-color': '#F4F4F4',
 
         'th-background': 'var(--background)',
         'th-background-secondary': 'var(--background-secondary)',

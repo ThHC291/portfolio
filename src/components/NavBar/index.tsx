@@ -91,7 +91,7 @@ const NavigationBar: React.FC = () => {
 	const t = useTranslations('NavBar');
 
 	return (
-		<nav className="flex justify-between h-20 px-4 py-4 filter drop-shadow-md">
+		<nav className="flex justify-between h-20 px-4 py-4 filter">
 
 			<section className="flex justify-start w-3/12">
 				<Logo />

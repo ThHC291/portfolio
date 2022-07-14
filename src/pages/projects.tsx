@@ -3,7 +3,7 @@ import CardProject from '../components/CardProject';
 
 export interface LinkProject {
   detail: string;
-  preview: string;
+  preview?: string;
   repository: string;
 }
 interface Project {
@@ -15,8 +15,8 @@ interface Project {
 }
 
 const projects: Array<Project> = [
-  { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum has been the industry's standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },
-  { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },
+  { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },
+  { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', repository: '/home' } },
   { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum has been the industry's standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },
   { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum has been the industry's standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },
   { image: '/photo.jfif', title: 'Project title', description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum has been the industry's standard dummy text ever since the 1500s`, techs: 'NextJS', links: { detail: '/home', preview: '/home', repository: '/home' } },

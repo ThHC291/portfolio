@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 					</section>
 				</section>
 
-				<section className="flex items-center bg-main-color justify-center rounded-xl py-6">
+				<section className="flex items-center bg-light-color dark:bg-main-color justify-center rounded-xl py-6">
 					<Image
 						src="/photo.jfif"
 						layout="intrinsic"
