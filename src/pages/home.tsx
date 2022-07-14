@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<section className="container flex flex-col items-center p-4 md:flex-row gap-x-12 xl:mb-12">
-				<section className="flex flex-grow flex-col md:w-2/5 justify-center items-start text-center md:text-left lg:w-1/2 xl:w-1/2">
+				<section className="flex flex-col justify-center items-start text-center m-10 md:text-left">
 					<section className="w-full font-semibold text-xl lg:text-4xl xl:text-4xl">
 						{t('helloMessage')}
 					</section>
